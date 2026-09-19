@@ -1,11 +1,59 @@
-<div align="center">
+# Network Analyzer - Android Cybersecurity Application
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+تطبيق أندرويد متكامل للأمن السيبراني والتحليل الشبكي مبني بأحدث تقنيات **Kotlin** و **Jetpack Compose**.
 
-  <h1>Built with AI Studio</h2>
+## 🚀 المميزات الرئيسية (Core Features)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **اكتشاف الأجهزة والشبكة (ARP Device Discovery)**:
+  - فحص أجهزة الشبكة المحلية وقراءة جدول كاش النواة `/proc/net/arp`.
+  - كشف عناوين الـ IP و الـ MAC ومصنعي الأجهزة عبر OUI.
+- **خريطة طوبولوجيا الشبكة التفاعلية (Network Topology Map)**:
+  - عرض تفاعلي لمخططات النجمة (Star)، الشجرة (Tree)، والحلقة (Ring).
+- **محلل الحزم الشبكية (Live Packet Sniffer & Analyzer)**:
+  - تتبع حزم البيانات المارة، مصادرها، وجهاتها، وبروتوكولاتها (TCP, UDP, ICMP, DNS, TLS).
+- **فحص الثغرات والمنافذ (Vulnerability & Port Scanner)**:
+  - فحص المنافذ المفتوحة وتقييم مستويات الخطورة (Critical, High, Medium, Low).
+- **التدقيق الأمني اللاسلكي (Wireless Security Audit)**:
+  - فحص نوع التشفير (WPA2/WPA3)، كشف شبكات Evil Twin الخبيثة، وحماية PMF.
+- **توليد التقارير الأمنية (Security Reports)**:
+  - استخراج تقارير تنفيذية مفصلة مع دعم التصدير بصيغة CSV والنص المنسق.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+---
 
-</div>
+## 🛠️ متطلبات البناء والتشغيل (Build Requirements)
+
+- **Android Studio** (Ladybug / Iguana أو أحدث)
+- **JDK 17** (Java Development Kit)
+- **Android SDK Platform 36** (Min SDK: 24, Target SDK: 36)
+- **Gradle 9.0+** (مرفق تلقائياً عبر Gradle Wrapper)
+
+---
+
+## 📦 البناء التلقائي عبر GitHub Actions (CI/CD)
+
+تم تجهيز المشروع بملف سير عمل تلقائي:
+`.github/workflows/build-apk.yml`
+
+بمجرد رفع المشروع إلى GitHub:
+1. سيعمل **GitHub Actions** تلقائياً لبناء التطبيق.
+2. عند اكتمال البناء، ستجد ملف **`app-debug.apk`** جاهزاً للتحميل مباشرة في تبويب **Actions** -> **Artifacts**.
+
+---
+
+## 💻 البناء يدوياً عبر سطر الأوامر (Local Build)
+
+إذا قمت بتحميل المشروع إلى جهازك:
+
+### نظام Linux / macOS:
+```bash
+chmod +x gradlew
+./gradlew assembleDebug
+```
+
+### نظام Windows:
+```cmd
+gradlew.bat assembleDebug
+```
+
+سيتوفر ملف الـ APK المجمّع في المسار التالي:
+`app/build/outputs/apk/debug/app-debug.apk`
