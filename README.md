@@ -25,18 +25,18 @@
 - **Android Studio** (Ladybug / Iguana أو أحدث)
 - **JDK 17** (Java Development Kit)
 - **Android SDK Platform 36** (Min SDK: 24, Target SDK: 36)
-- **Gradle 9.0+** (مرفق تلقائياً عبر Gradle Wrapper)
+- **Gradle 9.3.1+** (مرفق تلقائياً عبر Gradle Wrapper)
 
 ---
 
 ## 📦 البناء التلقائي عبر GitHub Actions (CI/CD)
 
-تم تجهيز المشروع بملف سير عمل تلقائي:
-`.github/workflows/build-apk.yml`
+تم تجهيز المشروع بملف سير العمل المعتمد والمحدث:
+- `.github/workflows/android.yml`
 
 بمجرد رفع المشروع إلى GitHub:
-1. سيعمل **GitHub Actions** تلقائياً لبناء التطبيق.
-2. عند اكتمال البناء، ستجد ملف **`app-debug.apk`** جاهزاً للتحميل مباشرة في تبويب **Actions** -> **Artifacts**.
+1. سيعمل **GitHub Actions** تلقائياً لبناء التطبيق على بيئة نظام Ubuntu مع JDK 17 و Android SDK Platform 36 و Gradle 9.3.1.
+2. عند اكتمال البناء، ستجد ملف **`app-debug.apk`** جاهزاً للتحميل والتثبيت المباشر في تبويب **Actions** -> قسم **Artifacts** باسم `app-debug-apk`.
 
 ---
 
